@@ -1,13 +1,18 @@
 # Portfolio v5
 
 **Objectives:**
-- React + Redux
+- ✓ React + Redux
 - Webpack4
-- Next.js
-- Typescript
+- ✓ SSR with Next.js
+- ✓ Typescript
 - i18n
-- Prettier
+    - https://github.com/isaachinman/next-i18next
+- ✓ Prettier
 - Styled Components
+    - ```'src/app/styled'```
 - Express server
+- CI with Jenkins
 
-**Todo**
+TODO:
+- Setup basic bootstrap layout in Styled Components (old)
+- https://bootstrap-styled.github.io/bootstrap-styled/
