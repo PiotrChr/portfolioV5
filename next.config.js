@@ -1,14 +1,6 @@
-import withTypescript = require('@zeit/next-typescript');
+const path = require('path')
+const dotenv = require('dotenv');
 
-const conig = {
-  webpack: config => {
-    // Fixes npm packages that depend on `fs` module
-    config.node = {
-      fs: 'empty'
-    }
+const config = dotenv.config();
 
-    return config
-  }
-};
-
-module.exports = withTypescript(config);
+module.exports = require( path.resolve(__dirname, process.env.CONFIG_DIR, 'next.config') );

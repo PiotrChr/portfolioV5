@@ -1,1 +1,1 @@
-export { default as index } from "./indexController";
+export { default as index } from './indexController';
