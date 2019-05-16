@@ -4,8 +4,8 @@
     "dev": "next src/app",
     "c:build": "next build src/app",
     "c:start": "next start src/app",
-    "p:w": "prettier --write 'src/{app,server}/**/*.ts'",
-    "p:c": "prettier --check 'src/{app,server}/**/*.ts'"
+    "p:w": "prettier --write 'src/{app,server,config}/**/*.{ts,tsx,js}'",
+    "p:c": "prettier --check 'src/{app,server,config}/**/*.{ts,tsx,js}'"
   },
   "dependencies": {
     "@types/dotenv": "^6.1.1",
@@ -15,7 +15,6 @@
     "@types/react-dom": "^16.8.4",
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
-    "next": "8.1.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "styled-components": "^4.2.0"
