@@ -1,18 +1,15 @@
 {
   "name": "portfoliov4",
   "scripts": {
-    "dev": "next src/app",
-    "c:build": "next build src/app",
-    "c:start": "next start src/app",
-    "p:w": "prettier --write 'src/{app,server,config}/**/*.{ts,tsx,js}'",
-    "p:c": "prettier --check 'src/{app,server,config}/**/*.{ts,tsx,js}'"
+    "build:server": "NODE_ENV=development webpack --config webpack.server.js",
+    "build:client": "NODE_ENV=development webpack --config webpack.app.js",
+    "bs": "build:server",
+    "bc": "build:client",
+    "pw": "prettier --write '{app,server,config}/**/*.{ts,tsx,js}'",
+    "pc": "prettier --check '{app,server,config}/**/*.{ts,tsx,js}'",
+    "test": "jest"
   },
   "dependencies": {
-    "@types/dotenv": "^6.1.1",
-    "@types/jest": "^24.0.13",
-    "@types/node": "^12.0.1",
-    "@types/react": "^16.8.17",
-    "@types/react-dom": "^16.8.4",
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "react": "16.8.6",
@@ -20,11 +17,23 @@
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
+    "@types/dotenv": "^6.1.1",
     "@types/express": "^4.16.1",
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.1",
+    "@types/react": "^16.8.17",
+    "@types/react-dom": "^16.8.4",
     "babel-plugin-module-resolver": "^3.2.0",
     "deepmerge": "^3.2.0",
     "dotenv-webpack": "^1.7.0",
+    "jest": "^24.8.0",
     "prettier": "1.17.1",
-    "typescript": "^3.4.5"
+    "supertest": "^4.0.2",
+    "ts-jest": "^24.0.2",
+    "ts-loader": "^6.0.0",
+    "typescript": "^3.4.5",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-node-externals": "^1.7.2"
   }
 }
