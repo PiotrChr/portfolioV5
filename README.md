@@ -24,3 +24,5 @@ TODO:
 - Add React Router
 - Adjust for SSR
 - Setup Webpack
+- https://github.com/visionmedia/supertest TESTS
+
