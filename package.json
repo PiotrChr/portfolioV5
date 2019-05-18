@@ -2,9 +2,11 @@
   "name": "portfoliov4",
   "scripts": {
     "build:server": "NODE_ENV=development webpack --config config/webpack.server.js",
-    "build:client": "NODE_ENV=development webpack --config config/webpack.app.js",
+    "build:app:client": "NODE_ENV=development webpack --config config/webpack.app.client.js",
+    "build:app:server": "NODE_ENV=development webpack --config config/webpack.app.server.js",
     "bs": "build:server",
-    "bc": "build:client",
+    "bac": "build:app:client",
+    "bas": "build:app:server",
     "pw": "prettier --write '{app,server,config}/**/*.{ts,tsx,js}'",
     "pc": "prettier --check '{app,server,config}/**/*.{ts,tsx,js}'",
     "test": "jest"
