@@ -11,11 +11,11 @@ const baseConfig = require('./webpack.base');
 module.exports = {
     ...baseConfig,
     name: 'app:client',
-    entry: '../app/index.ts',
+    entry: path.resolve(paths.APP, 'app.client.ts'),
     mode: NODE_ENV,
     target: 'node',
     output: {
-        path: path.resolve(__dirname, 'server', 'dist'),
+        path: path.resolve(paths.APP_DIST),
         filename: 'index.js',
     },
     externals: [nodeExternals()],
@@ -70,7 +70,7 @@ module.exports = {
                 parallel: true,
                 // Enable file caching
                 cache: true,
-                sourceMap: 'true', // adjust for prod
+                sourceMap: true, // adjust for prod
             }),
         ],
         namedModules: true,

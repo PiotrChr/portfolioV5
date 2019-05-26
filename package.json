@@ -4,6 +4,7 @@
     "node": ">=8.11.3"
   },
   "scripts": {
+    "testbuild": "webpack --config config/webpack/webpack.app.client.js",
     "build:server": "NODE_ENV=development node scripts/build-server.js",
     "build:app:client": "NODE_ENV=development node scripts/build-app:client.js",
     "build:app:server": "NODE_ENV=development node scripts/build-app:server.js",
@@ -15,8 +16,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "chalk": "^2.4.2",
     "dotenv": "^8.0.0",
     "express": "^4.17.0",
+    "html-webpack-plugin": "^3.2.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-helmet": "^5.2.1",
@@ -52,6 +55,7 @@
     "@types/react-dom": "^16.8.4",
     "@types/react-helmet": "^5.0.8",
     "babel-loader": "^8.0.6",
+    "babel-plugin-macros": "^2.5.1",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-named-asset-import": "^0.3.2",
     "case-sensitive-paths-webpack-plugin": "^2.2.0",

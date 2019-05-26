@@ -3,7 +3,7 @@ const paths = require('../constants').paths;
 
 module.exports = {
     node: {
-        fs: 'none',
+        fs: false,
     },
     resolve: {
         alias: {

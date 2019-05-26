@@ -29,8 +29,6 @@ const env = {
     }
 };
 
-console.log('Babel config');
-
 module.exports = {
     compact: true,
     presets: presets,

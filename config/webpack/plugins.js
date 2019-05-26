@@ -3,7 +3,7 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const HtmlWebpackPlugn = require('html-webpack-plugin');
-const { paths } = require('config/constants');
+const { paths } = require('../constants');
 
 const shared = [];
 
@@ -16,7 +16,7 @@ const client = [
         chunkFilename:
             process.env.NODE_ENV === 'development' ? '[id].css' : '[id].[contenthash].css',
     }),
-    ManifestPlugin({ fileName: 'manifest.json' }),
+    // ManifestPlugin({ fileName: 'manifest.json' }),
 ];
 
 const server = [

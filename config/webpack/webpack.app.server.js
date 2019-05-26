@@ -1,9 +1,7 @@
 const path = require('path');
-const paths = require('config/constants').paths;
-
+const paths = require('../constants').paths;
 const nodeExternals = require('webpack-node-externals');
-
-const loaders = require('./webpack/loaders');
+const loaders = require('./loaders');
 
 const { NODE_ENV = 'production' } = process.env;
 

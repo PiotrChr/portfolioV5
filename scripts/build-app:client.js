@@ -2,14 +2,16 @@ const webpack = require('webpack');
 
 const rimraf = require('rimraf');
 const clientConfig = require('../config/webpack/webpack.app.client')
-const serverConfig = require('../config/webpack/webpack.app.server')
+// const serverConfig = require('../config/webpack/webpack.app.server')
 const paths = require('../config/constants').paths;
 
-const build = async () => {
-    rimraf.sync(paths.APP_DIST);
-    rimraf.sync(paths.SERVER_DIST);
+const { logMessage } = require('./utils');
 
-    const [clientConfig] = webpackConfig;
+const build = async () => {
+    // rimraf.sync(paths.APP_DIST);
+    // rimraf.sync(paths.SERVER_DIST);
+
+    // const [clientConfig] = webpackConfig;
     const webpackCompiler = webpack([clientConfig]);
 
     const clientCompiler = webpackCompiler.compilers.find((compiler) => compiler.name === 'app:client');
@@ -23,13 +25,13 @@ const build = async () => {
     // });
 
     // wait until client and server is compiled
-    // try {
-    //     await clientPromise;
-    //     logMessage('Done!', 'info');
-    //     process.exit();
-    // } catch (error) {
-    //     logMessage(error, 'error');
-    // }
+    try {
+        clientCompiler.run();
+        logMessage('Done!', 'info');
+        process.exit();
+    } catch (error) {
+        logMessage(error, 'error');
+    }
 };
 
 build();
