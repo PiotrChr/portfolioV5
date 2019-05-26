@@ -9,7 +9,7 @@ const cssModuleRegex = /\.module\.css$/;
 
 const babelLoader = {
     test: /\.(js|jsx|ts|tsx|mjs)$/,
-    exclude: /node_modules/,
+    // exclude: /node_modules/,
     loader: require.resolve('babel-loader'),
     options: {
         plugins: [

@@ -15,29 +15,28 @@ module.exports = {
         server: [
             require.resolve('core-js/stable'),
             require.resolve('regenerator-runtime/runtime'),
-            path.resolve(paths.SERVER, 'index.ts')
-        ]
+            path.resolve(paths.SERVER, 'index.ts'),
+        ],
     },
-    externals: [nodeExternals({
-        whitelist: /\.css$/,
-    })],
+    externals: [
+        nodeExternals({
+            whitelist: /\.css$/,
+        }),
+    ],
     output: {
         path: paths.SERVER_DIST,
         filename: 'app.server.js',
-        publicPath: paths.RESOURCES
+        publicPath: paths.RESOURCES,
     },
     resolve: {
         extensions: ['.js', '.mjs', '.json', '.jsx', '.ts', '.tsx', '.css'],
-        modules: paths.MODULES
+        modules: paths.MODULES,
     },
-    plugins: [
-        ...plugins.shared,
-        ...plugins.server
-    ],
+    plugins: [...plugins.shared, ...plugins.server],
     module: {
-        rules: loaders.server
+        rules: loaders.server,
     },
     stats: {
-        colors: true
-    }
+        colors: true,
+    },
 };

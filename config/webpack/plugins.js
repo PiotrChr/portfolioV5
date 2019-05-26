@@ -14,9 +14,9 @@ const client = [
         filename:
             process.env.NODE_ENV === 'development' ? '[name].css' : '[name].[contenthash].css',
         chunkFilename:
-            process.env.NODE_ENV === 'development' ? '[id].css' : '[id].[contenthash].css'
+            process.env.NODE_ENV === 'development' ? '[id].css' : '[id].[contenthash].css',
     }),
-    ManifestPlugin({ fileName: 'manifest.json' })
+    ManifestPlugin({ fileName: 'manifest.json' }),
 ];
 
 const server = [
@@ -29,7 +29,5 @@ const server = [
 module.exports = {
     shared,
     client,
-    server
+    server,
 };
-
-

@@ -19,10 +19,9 @@ TODO:
 - Create a navbar
 - Read about express middlewares
 - Add dotenv
-- Split server and client builds
-- Remove Next
 - Add React Router
 - Adjust for SSR
 - Setup Webpack
 - https://github.com/visionmedia/supertest TESTS
-
+- Learn about postcss
+- Configure react-helmet

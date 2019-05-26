@@ -1,5 +1,3 @@
-const path = require('path');
-
 const presets = [
     [
         '@babel/env',
@@ -10,8 +8,8 @@ const presets = [
             }
         }
     ],
-    "next/babel",
-    "@zeit/next-typescript/babel"
+    '@babel/react',
+    '@babel/typescript'
 ]
 
 const plugins = [
@@ -31,7 +29,10 @@ const env = {
     }
 };
 
+console.log('Babel config');
+
 module.exports = {
+    compact: true,
     presets: presets,
     plugins: plugins,
     env: env

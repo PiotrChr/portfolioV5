@@ -1,16 +1,17 @@
 const path = require('path');
-const paths = require('config/constants').paths;
+const paths = require('../constants').paths;
 const nodeExternals = require('webpack-node-externals');
-const loaders = require('./webpack/loaders');
+const loaders = require('./loaders');
+const plugins = require('./plugins');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const { NODE_ENV = 'production' } = process.env;
-const baseConfig = require('./webpack/webpack.base');
+const baseConfig = require('./webpack.base');
 
 module.exports = {
     ...baseConfig,
     name: 'app:client',
-    entry: './app/index.ts',
+    entry: '../app/index.ts',
     mode: NODE_ENV,
     target: 'node',
     output: {
@@ -20,14 +21,11 @@ module.exports = {
     externals: [nodeExternals()],
     resolve: {
         extensions: ['.js', '.mjs', '.json', '.jsx', '.ts', '.tsx', '.css'],
-        modules: paths.MODULES
+        modules: paths.MODULES,
     },
-    plugins: [
-        ...plugins.shared,
-        ...plugins.client
-    ],
+    plugins: [...plugins.shared, ...plugins.client],
     module: {
-        rules: loaders.client
+        rules: loaders.client,
     },
     optimization: {
         minimizer: [
@@ -83,9 +81,9 @@ module.exports = {
                     test: /[\\/]node_modules[\\/]/,
                     name: 'vendor',
                     chunks: 'all',
-                }
-            }
-        }
+                },
+            },
+        },
     },
     stats: {
         cached: false,
@@ -98,5 +96,5 @@ module.exports = {
         reasons: false,
         timings: true,
         version: false,
-    }
+    },
 };

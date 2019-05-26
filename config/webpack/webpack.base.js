@@ -1,4 +1,5 @@
 const path = require('path');
+const paths = require('../constants').paths;
 
 module.exports = {
     node: {
@@ -6,7 +7,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-            config: path.resolve(process.env.CONFIG_DIR, 'config'),
+            config: path.resolve(paths.CONFIG, 'config'),
             app: path.resolve('app'),
             server: path.resolve('server'),
         },
