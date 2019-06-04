@@ -16,12 +16,9 @@
       "strict": true,
       "target": "esnext",
       "paths": {
-        "*": ["node_modules", "app/types/*"],
-        "config": ["src/config"]
+        "*": ["node_modules"],
+        "@App/*": ["app/src/*"]
       },
       "baseUrl": "./"
-    },
-    "include": [
-      "src/app"
-    ]
+    }
   }

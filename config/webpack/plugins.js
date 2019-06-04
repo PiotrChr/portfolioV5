@@ -16,7 +16,7 @@ const client = [
         chunkFilename:
             process.env.NODE_ENV === 'development' ? '[id].css' : '[id].[contenthash].css',
     }),
-    // ManifestPlugin({ fileName: 'manifest.json' }),
+    // ManifestPlugin({ fileName: 'manifest.json' })
 ];
 
 const server = [

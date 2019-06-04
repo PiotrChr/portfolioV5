@@ -12,6 +12,7 @@
     - ```'src/app/styled'```
 - Express server
 - CI with Jenkins
+- Immer
 
 TODO:
 
@@ -24,4 +25,6 @@ TODO:
 - Setup Webpack
 - https://github.com/visionmedia/supertest TESTS
 - Learn about postcss
-- Configure react-helmet
+- [✓] Configure react-helmet
+- Setup Immer (ref: Manu's react-ssr)
+- [✓] Setup aliases for IDE

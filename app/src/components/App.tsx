@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import Helmet from 'react-helmet';
+import Helmet from '@App/components/common/Helmet';
 
 type Props = {
     setLocale: (locale: string) => void
@@ -12,11 +12,10 @@ const App = () => {
 
     return (
         <div className="">
-            <Helmet
-                defaultTitle=""
-                titleTemplate=""
-            />
+            <Helmet mainTitle="Piotr Portfolio" />
             Something
         </div>
     );
 }
+
+export default App;

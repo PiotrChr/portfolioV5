@@ -7,9 +7,9 @@ module.exports = {
     },
     resolve: {
         alias: {
-            config: path.resolve(paths.CONFIG, 'config'),
-            app: path.resolve('app'),
-            server: path.resolve('server'),
+            '@Config': path.resolve(paths.CONFIG, 'config'),
+            '@App': path.resolve('app', 'src'),
+            '@Server': path.resolve('server', 'src'),
         },
     },
 };

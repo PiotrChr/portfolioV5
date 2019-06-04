@@ -3,6 +3,7 @@ const paths = require('../constants').paths;
 const nodeExternals = require('webpack-node-externals');
 const loaders = require('./loaders');
 const plugins = require('./plugins');
+const resolvers = require('./resolvers');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const { NODE_ENV = 'production' } = process.env;
@@ -19,10 +20,7 @@ module.exports = {
         filename: 'index.js',
     },
     externals: [nodeExternals()],
-    resolve: {
-        extensions: ['.js', '.mjs', '.json', '.jsx', '.ts', '.tsx', '.css'],
-        modules: paths.MODULES,
-    },
+    resolve: resolvers,
     plugins: [...plugins.shared, ...plugins.client],
     module: {
         rules: loaders.client,
