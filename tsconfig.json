@@ -10,6 +10,7 @@
       "noUnusedLocals": true,
       "noUnusedParameters": true,
       "preserveConstEnums": true,
+      "resolveJsonModule": true,
       "removeComments": false,
       "skipLibCheck": true,
       "sourceMap": true,
@@ -17,7 +18,9 @@
       "target": "esnext",
       "paths": {
         "*": ["node_modules"],
-        "@App/*": ["app/src/*"]
+        "@App/*": ["app/src/*"],
+        "@Config/*": ["config/*"],
+        "@Server/*": ["server/src/*"]
       },
       "baseUrl": "./"
     }

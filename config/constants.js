@@ -7,6 +7,7 @@ const constants = {
         SERVER_DIST: 'server/dist',
         RESOURCES: 'resources/'
     },
+    
 };
 
 constants.paths.MODULES = [

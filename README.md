@@ -2,7 +2,7 @@
 
 **Objectives:**
 - ✓ React + Redux
-- Webpack4
+- ✓ Webpack4
 - ✓ SSR with Next.js (old)
 - ✓ Typescript
 - i18n
@@ -15,16 +15,17 @@
 - Immer
 
 TODO:
-
 - Bootstrap Styled https://bootstrap-styled.github.io/bootstrap-styled/
 - Create a navbar
 - Read about express middlewares
 - Add dotenv
 - Add React Router
-- Adjust for SSR
+- Adjust webpack for SSR
 - Setup Webpack
 - https://github.com/visionmedia/supertest TESTS
 - Learn about postcss
 - [✓] Configure react-helmet
+- Write ENV actions (with Immer)
 - Setup Immer (ref: Manu's react-ssr)
 - [✓] Setup aliases for IDE
+- First working SSR + Client
