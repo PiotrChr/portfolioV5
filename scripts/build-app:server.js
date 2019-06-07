@@ -20,7 +20,7 @@ const generateStaticHTML = async () => {
     process.env.PORT = PORT;
 
     const script = nodemon({
-        script: `${paths.APP_DIST}/server.js`,
+        script: `${paths.APP_DIST}/app.server.js`,
         ignore: ['*'],
     });
 
@@ -42,11 +42,18 @@ const generateStaticHTML = async () => {
     });
 
     script.on('exit', (code) => {
+        console.log('Process exit');
         process.exit(code);
     });
 
     script.on('crash', () => {
+        console.log('Process crash');
         process.exit(1);
+    });
+
+    script.on('quit', () => {
+        console.log('Done');
+        process.exit();
     });
 };
 

@@ -10,21 +10,18 @@ const { NODE_ENV = 'production' } = process.env;
 const baseConfig = require('./webpack.base');
 
 module.exports = {
-    ...baseConfig,
     name: 'app:client',
-    entry: path.resolve(paths.APP, 'app.client.ts'),
+    entry: path.resolve(paths.APP, 'app.client.tsx'),
     mode: NODE_ENV,
     target: 'node',
     output: {
         path: path.resolve(paths.APP_DIST),
-        filename: 'index.js',
+        filename: 'app.client.js',
     },
     externals: [nodeExternals()],
     resolve: resolvers,
     plugins: [...plugins.shared, ...plugins.client],
-    module: {
-        rules: loaders.client,
-    },
+    module: { rules: loaders.client },
     optimization: {
         minimizer: [
             new TerserPlugin({

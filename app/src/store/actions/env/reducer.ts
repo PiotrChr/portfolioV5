@@ -1,14 +1,19 @@
 import { produce } from 'immer';
 
+import { State, Action, initialState, ActionTypes } from '@App/store'
 
-export default (state: AppState = initialState, action: Action): AppState =>
-    produce(state, (draft) => {
+export default (state: State = initialState, action: Action): State =>
+{
+    console.log(state);
+
+    return produce(state, (draft) => {
         const { type, payload } = action;
 
         switch (type) {
-            case ActionTypes.SETLOCALE: {
-                draft.locale = payload;
+            case ActionTypes.SET_LOCALE: {
+                draft.env.locale = payload;
                 return;
             }
         }
     });
+}

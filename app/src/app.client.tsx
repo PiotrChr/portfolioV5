@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter as Router } from 'connected-react-router';
 import { configureStore } from './store/store';
 import App from './components/App';
-import IntlProvider from './i18n/IntlProvider';
+import IntlProvider from './i18n/intlProvider';
 import createHistory from './store/history';
 
 const history = createHistory();

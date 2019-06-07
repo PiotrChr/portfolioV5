@@ -1,1 +1,2 @@
-export { State } from './initialState';
+// export { initialState } from './initialState';
+export * from './initialState'

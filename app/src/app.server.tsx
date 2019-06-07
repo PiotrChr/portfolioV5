@@ -2,7 +2,7 @@
 import path from 'path';
 import * as express from 'express';
 import chalk from 'chalk';
-const paths = require('@Config/constants').paths;
+import { paths } from '@Config/constants';
 import manifestHelpers from 'express-manifest-helpers';
 import bodyParser from 'body-parser';
 import { configureStore } from '@App/store/store';
@@ -18,7 +18,7 @@ const app = express.default();
 // Use Nginx or Apache to serve static assets in production or remove the if() around the following
 // lines to use the express.static middleware to serve assets for production (not recommended!)
 if (process.env.NODE_ENV === 'development') {
-    app.use(paths.publicPath, express.static(path.join(paths.clientBuild, paths.publicPath)));
+    app.use(paths.APP_DIST, express.static(path.resolve(paths.APP_DIST)));
 }
 
 app.use(bodyParser.json());
@@ -39,7 +39,7 @@ const addStore = (
 
 app.use(addStore);
 
-const manifestPath = path.join(paths.clientBuild, paths.publicPath);
+const manifestPath = path.resolve(paths.APP_DIST);
 
 app.use(
     manifestHelpers({

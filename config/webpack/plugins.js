@@ -9,14 +9,13 @@ const shared = [];
 
 const client = [
     new CaseSensitivePathsPlugin(),
-    // TODO: add env globals
     new MiniCssExtractPlugin({
         filename:
             process.env.NODE_ENV === 'development' ? '[name].css' : '[name].[contenthash].css',
         chunkFilename:
             process.env.NODE_ENV === 'development' ? '[id].css' : '[id].[contenthash].css',
     }),
-    // ManifestPlugin({ fileName: 'manifest.json' })
+    new ManifestPlugin({ fileName: 'manifest.json' })
 ];
 
 const server = [

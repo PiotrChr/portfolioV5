@@ -6,7 +6,7 @@ import env from './actions/env/reducer';
 
 const createRootReducer = (history: History) =>
     combineReducers({
-        env,
+        app: env,
         router: connectRouter(history),
     });
 

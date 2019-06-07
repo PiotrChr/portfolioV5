@@ -42,9 +42,13 @@ const I18N = ({ children, locale }: Props) => {
     return <I18nextProvider i18n={i18next}>{children}</I18nextProvider>;
 };
 
-const mapStateToProps = (state: any) => ({
-    locale: getLocale(state),
-});
+const mapStateToProps = (state: any) => {
+    console.log(state);
+
+    return {
+        locale: getLocale(state),
+    }
+}
 
 export default withRouter<any>(
     connect(

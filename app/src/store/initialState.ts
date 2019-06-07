@@ -1,10 +1,19 @@
-import env, { Env } from '@App/store/actions/env/initialState';
+import env, { Env, ActionTypes as EnvTypes } from '@App/store/actions/env/initialState';
 
-export interface State {
+export type Action = {
+    type: string;
+    payload: any;
+};
+
+export type State = Readonly<{
     env: Env
-}
+}>
 
-const initialState: State = {
+export const ActionTypes = {
+    ...EnvTypes
+};
+
+export const initialState: State = {
     env: env
 };
 
