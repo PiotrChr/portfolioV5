@@ -1,3 +1,4 @@
 {
-  "client.js": "app.client.js"
+  "client.js": "app.client.js",
+  "vendor.js": "vendor.462fb6cd.chunk.js"
 }

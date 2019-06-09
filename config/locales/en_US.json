@@ -2,6 +2,10 @@
   "translation": {
     "features": "Features",
     "i18n-example": "i18n Example",
-    "i18n-support": "i18n support (via React i18Next)"
+    "i18n-support": "i18n support (via React i18Next)",
+    "navigation": {
+      "home": "Home",
+      "blog": "Blog"
+    }
   }
 }

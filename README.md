@@ -13,6 +13,7 @@
 - Express server
 - CI with Jenkins
 - ✓ Immer
+- Tests
 
 TODO:
 - [✓] Bootstrap Styled https://bootstrap-styled.github.io/bootstrap-styled/
@@ -23,9 +24,10 @@ TODO:
 - [✓] Adjust webpack for SSR
 - [✓] Setup Webpack
 - [✓] read about https://github.com/visionmedia/supertest TESTS (we can defiinitely use it for testing)
-- Learn about postcss (won't fit here it's good for post processing rather large chunks of assembled css)
+- [✓] Learn about postcss (won't fit here it's good for post processing rather large chunks of assembled css)
 - [✓] Configure react-helmet
 - Write ENV actions (with Immer)
 - Setup Immer (ref: Manu's react-ssr)
 - [✓] Setup aliases for IDE
 - First working SSR + Client
+- Add Tests !

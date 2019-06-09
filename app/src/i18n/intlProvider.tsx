@@ -43,8 +43,6 @@ const I18N = ({ children, locale }: Props) => {
 };
 
 const mapStateToProps = (state: any) => {
-    console.log(state);
-
     return {
         locale: getLocale(state),
     }

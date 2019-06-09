@@ -16,3 +16,5 @@ declare namespace NodeJS {
 }
 
 declare module 'express-manifest-helpers';
+declare module '@bootstrap-styled/v4'
+declare module '@bootstrap-styled/provider/lib/BootstrapProvider'

@@ -82,15 +82,15 @@ module.exports = {
         ],
         namedModules: true,
         noEmitOnErrors: true,
-        // splitChunks: {
-        //     cacheGroups: {
-        //         commons: {
-        //             test: /[\\/]node_modules[\\/]/,
-        //             name: 'vendor',
-        //             chunks: 'all',
-        //         },
-        //     },
-        // },
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendor',
+                    chunks: 'all',
+                },
+            },
+        },
     },
     stats: {
         cached: false,
