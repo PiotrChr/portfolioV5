@@ -28,8 +28,8 @@ const serverRenderer: any = () => (
         '<!doctype html>' +
         renderToString(
             <Html
-                css={[res.locals.assetPath('bundle.css'), res.locals.assetPath('vendor.css')]}
-                scripts={[res.locals.assetPath('bundle.js'), res.locals.assetPath('vendor.js')]}
+                css={[res.locals.assetPath('client.css'), res.locals.assetPath('vendor.css')]}
+                scripts={[res.locals.assetPath('client.js'), res.locals.assetPath('vendor.js')]}
                 state={state}
             >
                 {content}

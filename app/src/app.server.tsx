@@ -15,11 +15,8 @@ require('dotenv').config();
 
 const app = express.default();
 
-// Use Nginx or Apache to serve static assets in production or remove the if() around the following
-// lines to use the express.static middleware to serve assets for production (not recommended!)
-if (process.env.NODE_ENV === 'development') {
-    app.use(paths.APP_DIST, express.static(path.resolve(paths.APP_DIST)));
-}
+app.use(express.static(path.resolve(paths.RESOURCES)));
+app.use(express.static(path.resolve(paths.APP_DIST)));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

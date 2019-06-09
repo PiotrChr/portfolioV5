@@ -1,5 +1,6 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { Normalize } from 'styled-normalize';
+import { Routes } from '@App/router/routes';
 
 import Helmet from '@App/components/common/Helmet';
 
@@ -11,10 +12,13 @@ type Props = {
 const App = () => {
 
     return (
-        <div className="">
+        <React.Fragment>
             <Helmet mainTitle="Piotr Portfolio" />
-            Something
-        </div>
+            <Normalize />
+            <div className="">
+                <Routes />
+            </div>
+        </React.Fragment>
     );
 }
 

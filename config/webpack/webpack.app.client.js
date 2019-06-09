@@ -1,6 +1,5 @@
 const path = require('path');
 const paths = require('../constants').paths;
-const nodeExternals = require('webpack-node-externals');
 const loaders = require('./loaders');
 const plugins = require('./plugins');
 const resolvers = require('./resolvers');
@@ -11,14 +10,27 @@ const baseConfig = require('./webpack.base');
 
 module.exports = {
     name: 'app:client',
-    entry: path.resolve(paths.APP, 'app.client.tsx'),
+    entry: {
+        client: [
+            require.resolve('core-js/stable'),
+            require.resolve('regenerator-runtime/runtime'),
+            path.resolve(paths.APP, 'app.client.tsx'),
+        ]
+    },
     mode: NODE_ENV,
-    target: 'node',
+    target: 'web',
     output: {
         path: path.resolve(paths.APP_DIST),
         filename: 'app.client.js',
+        chunkFilename: '[name].[chunkhash:8].chunk.js',
     },
-    externals: [nodeExternals()],
+    node: {
+        dgram: 'empty',
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty',
+        child_process: 'empty',
+    },
     resolve: resolvers,
     plugins: [...plugins.shared, ...plugins.client],
     module: { rules: loaders.client },
@@ -70,15 +82,15 @@ module.exports = {
         ],
         namedModules: true,
         noEmitOnErrors: true,
-        splitChunks: {
-            cacheGroups: {
-                commons: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name: 'vendor',
-                    chunks: 'all',
-                },
-            },
-        },
+        // splitChunks: {
+        //     cacheGroups: {
+        //         commons: {
+        //             test: /[\\/]node_modules[\\/]/,
+        //             name: 'vendor',
+        //             chunks: 'all',
+        //         },
+        //     },
+        // },
     },
     stats: {
         cached: false,
