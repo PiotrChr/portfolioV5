@@ -1,8 +1,8 @@
 const path = require('path');
 const paths = require('../constants').paths;
-const loaders = require('./loaders');
+const loaders = require('./loaders').appclient;
 const plugins = require('./plugins');
-const resolvers = require('./resolvers');
+const resolvers = require('./resolvers').client;
 const TerserPlugin = require('terser-webpack-plugin');
 
 const { NODE_ENV = 'production' } = process.env;
@@ -15,7 +15,7 @@ module.exports = {
             require.resolve('core-js/stable'),
             require.resolve('regenerator-runtime/runtime'),
             path.resolve(paths.APP, 'app.client.tsx'),
-        ]
+        ],
     },
     mode: NODE_ENV,
     target: 'web',
@@ -33,7 +33,7 @@ module.exports = {
     },
     resolve: resolvers,
     plugins: [...plugins.shared, ...plugins.client],
-    module: { rules: loaders.client },
+    module: { rules: loaders },
     optimization: {
         minimizer: [
             new TerserPlugin({

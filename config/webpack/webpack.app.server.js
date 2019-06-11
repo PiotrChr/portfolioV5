@@ -1,9 +1,9 @@
 const path = require('path');
 const paths = require('../constants').paths;
 const nodeExternals = require('webpack-node-externals');
-const loaders = require('./loaders');
+const loaders = require('./loaders').appserver;
 const plugins = require('./plugins');
-const resolvers = require('./resolvers');
+const resolvers = require('./resolvers').client;
 
 const { NODE_ENV = 'production' } = process.env;
 
@@ -31,7 +31,7 @@ module.exports = {
     resolve: resolvers,
     plugins: [...plugins.shared, ...plugins.server],
     module: {
-        rules: loaders.server,
+        rules: loaders,
     },
     stats: {
         colors: true,

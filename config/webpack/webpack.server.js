@@ -1,12 +1,14 @@
 const path = require('path');
+const paths = require('../constants').paths;
 const nodeExternals = require('webpack-node-externals');
 const baseConfig = require('./webpack/webpack.base');
-
+const loaders = require('./loaders').server;
+const resolvers = require('./resolvers').server;
 const { NODE_ENV = 'production' } = process.env;
 
 module.exports = {
     ...baseConfig,
-    entry: './server/index.ts',
+    entry: path.resolve(paths.SERVER, 'index.ts'),
     mode: NODE_ENV,
     target: 'node',
     output: {
@@ -14,15 +16,6 @@ module.exports = {
         filename: 'index.js',
     },
     externals: [nodeExternals()],
-    module: {
-        rules: [
-            {
-                test: /\.ts$/,
-                use: ['ts-loader'],
-            },
-        ],
-    },
-    resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx'],
-    },
+    module: loaders,
+    resolve: resolvers,
 };

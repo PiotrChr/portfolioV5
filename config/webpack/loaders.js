@@ -142,7 +142,7 @@ const fileLoaderServer = {
     ],
 };
 
-const client = [
+const appclient = [
     {
         oneOf: [
             babelLoader,
@@ -153,7 +153,7 @@ const client = [
         ],
     },
 ];
-const server = [
+const appserver = [
     {
         oneOf: [
             babelLoader,
@@ -164,8 +164,14 @@ const server = [
         ],
     },
 ];
+const server = [
+    {
+        oneOf: [babelLoader, urlLoaderServer, fileLoaderServer],
+    },
+];
 
 module.exports = {
-    client,
+    appclient,
+    appserver,
     server,
 };
