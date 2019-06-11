@@ -4,8 +4,9 @@
     "node": ">=8.11.3"
   },
   "scripts": {
-    "testbuild:client": "webpack --config config/webpack/webpack.app.client.js",
-    "testbuild:server": "webpack --config config/webpack/webpack.app.server.js",
+    "testbuild:server": "webpack --config config/webpack/webpack.server.js",
+    "testbuild:appclient": "webpack --config config/webpack/webpack.app.client.js",
+    "testbuild:appserver": "webpack --config config/webpack/webpack.app.server.js",
     "build:server": "NODE_ENV=development node scripts/build-server.js",
     "build:app:client": "NODE_ENV=development node scripts/build-app:client.js",
     "build:app:server": "NODE_ENV=development node scripts/build-app:server.js",
@@ -27,6 +28,7 @@
     "bootstrap-styled": "^2.4.13",
     "chalk": "^2.4.2",
     "connected-react-router": "^6.4.0",
+    "contentful": "^7.6.0",
     "core-js": "^3.1.3",
     "dotenv": "^8.0.0",
     "express": "^4.17.0",

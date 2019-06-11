@@ -1,4 +1,4 @@
-import env, { Env, ActionTypes as EnvTypes } from '@App/store/actions/env/initialState';
+import { env, Env, ActionTypes as EnvTypes } from '@App/store/actions/env';
 
 export type Action = {
     type: string;

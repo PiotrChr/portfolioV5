@@ -12,13 +12,21 @@ import {
     NavItem,
     NavLink,
 } from '@bootstrap-styled/v4';
+import DropdownMenu from '@bootstrap-styled/v4/lib/Dropdown/DropdownMenu';
 
 import { navigation } from '@Config/navigation'
 
-// TODO: Export and add a react hook here
-
 export const Navbar = () => {
     const [isOpen, setOpen] = useState(false);
+
+    const renderItems = () => navigation.main.map((item, key) => (
+            <NavItem key={key}>
+                <LinkContainer to={item.route}>
+                    <NavLink>{item.name}</NavLink>
+                </LinkContainer>
+            </NavItem>
+        )
+    )
 
     return (
         <BNavbar color="faded" light toggleable="lg">
@@ -29,17 +37,7 @@ export const Navbar = () => {
                 </div>
                 <Collapse navbar isOpen={!!isOpen}>
                     <Nav navbar className="mr-auto">
-                        {
-                            navigation.main.map((item, key) => {
-                                return (
-                                    <NavItem key={key}>
-                                        <LinkContainer to={item.route}>
-                                            <NavLink>{item.name}</NavLink>
-                                        </LinkContainer>
-                                    </NavItem>
-                                )
-                            })
-                        }
+                        { renderItems() }
                     </Nav>
                 </Collapse>
             </Container>

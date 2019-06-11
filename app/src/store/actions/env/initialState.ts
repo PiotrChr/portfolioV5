@@ -4,12 +4,6 @@ export interface Env {
     locale: Locale
 };
 
-export const ActionTypes = {
-    SET_LOCALE: 'SET_LOCALE'
-};
-
-const envState: Env = {
+export const env: Env = {
     locale: 'en_US'
 }
-
-export default envState
