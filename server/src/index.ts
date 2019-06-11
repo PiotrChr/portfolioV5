@@ -1,9 +1,9 @@
+require('@Config/env');
 import express = require('express');
+import routes from './router/routes';
+
 const app = express();
-
 const port: number = 8000;
-
-import routes from './routes';
 
 app.use('/', routes);
 
