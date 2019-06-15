@@ -4,7 +4,7 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter as Router } from 'react-router-dom';
 import { Store } from 'redux';
 import { Provider } from 'react-redux';
-import IntlProvider from '@App/i18n/IntlProvider';
+import IntlProvider from '@App/i18n/intlProvider';
 import App from '@App/components/App';
 import Html from '@App/components/HTML';
 

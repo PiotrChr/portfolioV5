@@ -1,11 +1,15 @@
 {
   "translation": {
+    "Home": "Home",
     "features": "Features",
     "i18n-example": "i18n Example",
     "i18n-support": "i18n support (via React i18Next)",
     "navigation": {
-      "home": "Home",
-      "blog": "Blog"
+      "language": {
+        "de": "German",
+        "pl": "Polish",
+        "en": "English"
+      }
     }
   }
 }

@@ -77,7 +77,7 @@ module.exports = {
                 parallel: true,
                 // Enable file caching
                 cache: true,
-                sourceMap: true, // adjust for prod
+                sourceMap: NODE_ENV === 'development',
             }),
         ],
         namedModules: true,

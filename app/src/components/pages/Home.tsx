@@ -1,5 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const Home = () => {
-    return <div>Home</div>
+
+    const { t } = useTranslation();
+
+    return <div>{ t('Home') }</div>
 }

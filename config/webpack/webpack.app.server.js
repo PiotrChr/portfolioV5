@@ -26,7 +26,6 @@ module.exports = {
     output: {
         path: path.resolve(paths.APP_DIST),
         filename: 'app.server.js',
-        publicPath: paths.RESOURCES,
     },
     resolve: resolvers,
     plugins: [...plugins.shared, ...plugins.server],

@@ -4,9 +4,9 @@ export const routesConfig = {
 };
 
 export const languagesConfig = {
-    de: { name: 'de', value: 'de_DE' },
-    pl: { name: 'pl', value: 'pl_PL' },
-    en: { name: 'en', value: 'en_US' }
+    de: { name: 'navigation.language.de', value: 'de_DE' },
+    pl: { name: 'navigation.language.pl', value: 'pl_PL' },
+    en: { name: 'navigation.language.en', value: 'en_US' }
 }
 
 export const navigation = {

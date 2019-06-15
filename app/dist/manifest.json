@@ -1,4 +1,5 @@
 {
+  "client.css": "client.css",
   "client.js": "app.client.js",
-  "vendor.js": "vendor.462fb6cd.chunk.js"
+  "vendor.js": "vendor.1c87ebda.chunk.js"
 }

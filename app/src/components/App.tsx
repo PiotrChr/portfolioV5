@@ -5,9 +5,9 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import Helmet from '@App/components/common/Helmet';
 import { Navbar } from '@App/components/common/nav/Navbar';
-import BootstrapProvider from '@bootstrap-styled/provider/lib/BootstrapProvider';
 
 import { setLocale } from '@App/store/actions/env';
+
 
 const { themes, ...S } = require('@App/styled');
 
@@ -17,21 +17,19 @@ type Props = {
 }
 
 const App = ({ setLocale, t }: Props) => {
-    const handleLocaleChange = useCallback((e: React.FormEvent<HTMLButtonElement>) => {
-        setLocale(e.currentTarget.value);
+    const handleLocaleChange = useCallback((locale: { value: string }) => {
+        setLocale(locale.value);
     }, []);
 
     return (
         <>
             <Helmet mainTitle="Piotr Portfolio" />
             <S.App>
-                <BootstrapProvider theme={themes.main}>
                     <Normalize />
-                    <Navbar setLocale={setLocale} />
+                    <Navbar setLocale={handleLocaleChange} />
                     <div className="">
                         <Routes />
                     </div>
-                </BootstrapProvider>
             </S.App>
         </>
     );

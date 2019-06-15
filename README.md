@@ -17,8 +17,6 @@
 
 TODO:
 - [✓] Bootstrap Styled https://bootstrap-styled.github.io/bootstrap-styled/
-- Create a navbar
-- Read about express middlewares
 - [✓] Add dotenv (ready to use)
 - [✓] Add React Router
 - [✓] Adjust webpack for SSR
@@ -27,15 +25,19 @@ TODO:
 - [✓] Learn about postcss (won't fit here it's good for post processing rather large chunks of assembled css)
 - [✓] Configure react-helmet
 - [✓] Write ENV actions (with Immer)
-- Locale switcher
-- Setup Immer (ref: Manu's react-ssr)
 - [✓] Setup aliases for IDE
 - [✓] First working SSR + Client
-- Add Tests !
+- [✓] Locale switcher
+- [✓] Create a navbar
+- Read about express middlewares
+- Setup Immer (ref: Manu's react-ssr)
+- Server: Add caching
 - Server: Contentful
 - Server: Add content API
 - Client: add content mapping
-- Server: Add caching
+- Add Tests !
 - Add a server build
 - Finish DropdownSelect
 - testbuild:server fails for some reason
+- Handle url set locale
+- Loads forever, wtf

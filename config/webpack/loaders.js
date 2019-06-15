@@ -5,6 +5,7 @@ const generateSourceMap = process.env.OMIT_SOURCEMAP !== 'true';
 const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
 
 const cssRegex = /\.css$/;
+const cssSassRegex = /\.(css|scss)$/;
 const cssModuleRegex = /\.module\.css$/;
 
 const babelLoader = {
@@ -33,7 +34,6 @@ const babelLoader = {
 const cssModuleLoaderClient = {
     test: cssModuleRegex,
     use: [
-        require.resolve('css-hot-loader'),
         MiniCssExtractPlugin.loader,
         {
             loader: require.resolve('css-loader'),
@@ -56,10 +56,9 @@ const cssModuleLoaderClient = {
 };
 
 const cssLoaderClient = {
-    test: cssRegex,
+    test: cssSassRegex,
     exclude: cssModuleRegex,
     use: [
-        require.resolve('css-hot-loader'),
         MiniCssExtractPlugin.loader,
         require.resolve('css-loader'),
         {
@@ -68,6 +67,9 @@ const cssLoaderClient = {
                 sourceMap: generateSourceMap,
             },
         },
+        {
+            loader: require.resolve('sass-loader'), // compiles Sass to CSS
+        }
     ],
 };
 
@@ -94,10 +96,31 @@ const cssModuleLoaderServer = {
     ],
 };
 
+const sassLoaderClient = {
+    test: /\.(scss)$/,
+    use: [
+        {
+            loader: 'css-loader', // translates CSS into CommonJS modules
+        },
+        {
+            loader: 'postcss-loader', // Run post css actions
+            options: {
+                plugins: function() {
+                    // post css plugins, can be exported to postcss.config.js
+                    return [require('precss'), require('autoprefixer')];
+                },
+            },
+        },
+        {
+            loader: 'sass-loader', // compiles Sass to CSS
+        },
+    ],
+};
+
 const cssLoaderServer = {
     test: cssRegex,
     exclude: cssModuleRegex,
-    use: [MiniCssExtractPlugin.loader, require.resolve('css-loader')],
+    use: [MiniCssExtractPlugin.loader, require.resolve('css-loader'), require.resolve('sass-loader')],
 };
 
 const urlLoaderClient = {
@@ -148,6 +171,7 @@ const appclient = [
             babelLoader,
             cssModuleLoaderClient,
             cssLoaderClient,
+            sassLoaderClient,
             urlLoaderClient,
             fileLoaderClient,
         ],
