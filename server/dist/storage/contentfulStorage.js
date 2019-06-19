@@ -41,7 +41,7 @@ var ContentfulStorage = /** @class */ (function () {
         this.config = config;
         this.client = contentful.createClient({
             space: config.space,
-            accessToken: config.accessToken
+            accessToken: config.accessToken,
         });
     }
     // async getPosts(page: number): Promise<any> {

@@ -7,14 +7,14 @@ exports.Blog = function () {
     var env = env_1.getEnv();
     var apiConfig = {
         space: env.CONTENTFUL_PREVIEW_SPACE_ID,
-        accessToken: env.CONTENTFUL_CD_ACCESS_TOKEN
+        accessToken: env.CONTENTFUL_CD_ACCESS_TOKEN,
     };
     var storage = new storage_1.ContentfulStorage(apiConfig);
     var repository = new repository_1.BlogRepository(storage);
     // console.log(repository);
     return {
         getAll: function () { return repository.getAll(); },
-        getById: function () { return repository.getById(); }
+        getById: function () { return repository.getById(); },
     };
 };
 //# sourceMappingURL=Blog.js.map

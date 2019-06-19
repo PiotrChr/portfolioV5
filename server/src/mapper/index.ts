@@ -1,1 +1,1 @@
-export { postMapper } from './postMapper';
+export * from './contentMapper';

@@ -59,7 +59,7 @@ var BlogRepository = /** @class */ (function () {
                     case 2:
                         error_1 = _a.sent();
                         console.log('error', error_1);
-                        throw new error_1;
+                        throw new error_1();
                     case 3: return [2 /*return*/];
                 }
             });

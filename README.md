@@ -10,7 +10,7 @@
 - ✓ Prettier
 - ✓ Styled Components/ Bootstrap styled
     - ```'src/app/styled'```
-- Express server
+- ✓ Express server
 - CI with Jenkins
 - ✓ Immer
 - Tests
@@ -29,15 +29,16 @@ TODO:
 - [✓] First working SSR + Client
 - [✓] Locale switcher
 - [✓] Create a navbar
-- Read about express middlewares
-- Setup Immer (ref: Manu's react-ssr)
 - [✓] Server: Add caching
-- Server: Contentful
+- [✓] Server: Contentful
 - [✓] Server: Add content API
-- Client: add content mapping
-- Add Tests !
 - [✓] Add a server build
 - [✓] Finish DropdownSelect
 - [✓] testbuild:server fails for some reason
+- Client: add content api call
+- Read about express middlewares
+- Setup Immer (ref: Manu's react-ssr)
+- Client: add content mapping
+- Add Tests !
 - Handle url set locale
 - Loads forever, wtf

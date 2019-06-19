@@ -3,11 +3,12 @@ export type Post = {
     createdAt: Date;
     updatedAt: Date;
     locale: string;
+    title: string;
     fields: any;
     contentTypeId: string;
 };
 
-export const postMapper = (posts: any): Post[] => {
+export const contentMapper = (posts: any): Post[] => {
     return Array(posts.length)
         .fill(null)
         .map((_, index) => {
