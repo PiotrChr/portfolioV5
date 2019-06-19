@@ -5,8 +5,8 @@
 /coverage
 
 # production
-app/dist
-server/dist
+/app/dist
+/server/dist
 
 # misc
 .DS_Store
