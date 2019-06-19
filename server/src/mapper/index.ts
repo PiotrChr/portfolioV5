@@ -1,0 +1,1 @@
+export { postMapper } from './postMapper';

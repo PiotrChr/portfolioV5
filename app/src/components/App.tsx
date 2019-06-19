@@ -8,13 +8,12 @@ import { Navbar } from '@App/components/common/nav/Navbar';
 
 import { setLocale } from '@App/store/actions/env';
 
-
 const { themes, ...S } = require('@App/styled');
 
 type Props = {
-    setLocale: (locale: string) => void
-    t: (key: string) => string
-}
+    setLocale: (locale: string) => void;
+    t: (key: string) => string;
+};
 
 const App = ({ setLocale, t }: Props) => {
     const handleLocaleChange = useCallback((locale: { value: string }) => {
@@ -25,15 +24,15 @@ const App = ({ setLocale, t }: Props) => {
         <>
             <Helmet mainTitle="Piotr Portfolio" />
             <S.App>
-                    <Normalize />
-                    <Navbar setLocale={handleLocaleChange} />
-                    <div className="">
-                        <Routes />
-                    </div>
+                <Normalize />
+                <Navbar setLocale={handleLocaleChange} />
+                <div className="">
+                    <Routes />
+                </div>
             </S.App>
         </>
     );
-}
+};
 
 const mapDispatchToProps = {
     setLocale,

@@ -26,15 +26,15 @@ const serverRenderer: any = () => (
 
     return res.send(
         '<!doctype html>' +
-        renderToString(
-            <Html
-                css={[res.locals.assetPath('client.css'), res.locals.assetPath('vendor.css')]}
-                scripts={[res.locals.assetPath('client.js'), res.locals.assetPath('vendor.js')]}
-                state={state}
-            >
-                {content}
-            </Html>
-        )
+            renderToString(
+                <Html
+                    css={[res.locals.assetPath('client.css'), res.locals.assetPath('vendor.css')]}
+                    scripts={[res.locals.assetPath('client.js'), res.locals.assetPath('vendor.js')]}
+                    state={state}
+                >
+                    {content}
+                </Html>
+            )
     );
 };
 

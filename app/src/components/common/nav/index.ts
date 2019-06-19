@@ -1,2 +1,2 @@
-export { LanguageDropdown } from './LangageDropdown'
-export { Navbar } from './Navbar'
+export { LanguageDropdown } from './LangageDropdown';
+export { Navbar } from './Navbar';

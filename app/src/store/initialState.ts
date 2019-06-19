@@ -6,15 +6,15 @@ export type Action = {
 };
 
 export type State = Readonly<{
-    env: Env
-}>
+    env: Env;
+}>;
 
 export const ActionTypes = {
-    ...EnvTypes
+    ...EnvTypes,
 };
 
 export const initialState: State = {
-    env: env
+    env: env,
 };
 
 export default initialState;

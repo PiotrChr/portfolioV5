@@ -1,22 +1,29 @@
-import { ContentfulStorage } from '@Server/storage'
+import { ContentfulStorage } from '../storage';
+import { postMapper } from '../mapper';
 import console = require('console');
-
 export class BlogRepository {
-    constructor(public storage: ContentfulStorage) {
+    storage: ContentfulStorage;
 
+    constructor(contentfulStorage: ContentfulStorage) {
+        this.storage = contentfulStorage;
     }
 
-    getPosts(page: number): any {
-        const posts = this.storage.getPosts(page)
-        console.log(posts);
-        return posts
-    }
+    // getPosts(page: number): any {
+    //     const posts = this.storage.getPosts(page);
+    //     return posts;
+    // }
 
-    getAll(): any {
-        return ''
+    async getAll(): Promise<any> {
+        try {
+            const posts = await this.storage.getAll();
+            return postMapper(posts.items);
+        } catch (error) {
+            console.log('error', error);
+            throw new error();
+        }
     }
 
     getById(): any {
-        return ''
+        return '';
     }
 }

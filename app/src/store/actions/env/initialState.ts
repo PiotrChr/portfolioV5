@@ -1,9 +1,9 @@
-import { Locale } from '@App/i18n'
+import { Locale } from '@App/i18n';
 
 export interface Env {
-    locale: Locale
-};
+    locale: Locale;
+}
 
 export const env: Env = {
-    locale: 'en_US'
-}
+    locale: 'en_US',
+};

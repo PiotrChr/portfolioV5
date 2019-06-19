@@ -69,7 +69,7 @@ const cssLoaderClient = {
         },
         {
             loader: require.resolve('sass-loader'), // compiles Sass to CSS
-        }
+        },
     ],
 };
 
@@ -120,7 +120,11 @@ const sassLoaderClient = {
 const cssLoaderServer = {
     test: cssRegex,
     exclude: cssModuleRegex,
-    use: [MiniCssExtractPlugin.loader, require.resolve('css-loader'), require.resolve('sass-loader')],
+    use: [
+        MiniCssExtractPlugin.loader,
+        require.resolve('css-loader'),
+        require.resolve('sass-loader'),
+    ],
 };
 
 const urlLoaderClient = {

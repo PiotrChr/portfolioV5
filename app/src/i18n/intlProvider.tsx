@@ -17,7 +17,7 @@ i18next.init({
     resources: {
         de_DE: deDE,
         en_US: enUS,
-        pl_PL: plPL
+        pl_PL: plPL,
     },
     parseMissingKeyHandler: (missing) => {
         if (process.env.NODE_ENV === 'development') {
@@ -45,8 +45,8 @@ const I18N = ({ children, locale }: Props) => {
 const mapStateToProps = (state: any) => {
     return {
         locale: getLocale(state),
-    }
-}
+    };
+};
 
 export default withRouter<any>(
     connect(

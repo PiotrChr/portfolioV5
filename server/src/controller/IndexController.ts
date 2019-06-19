@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-export const IndexController = (req: Request, res: Response) => {
+export const IndexController = (_: Request, res: Response) => {
     res.send({ test: 1 }.toString());
 };
 

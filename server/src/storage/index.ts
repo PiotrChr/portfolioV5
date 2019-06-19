@@ -1,1 +1,1 @@
-export { ContentfulStorage, ContentfulConfig } from './contentfulStorage';
+export * from './contentfulStorage';

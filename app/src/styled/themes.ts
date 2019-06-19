@@ -1,3 +1,3 @@
 export const themes = {
-    main: {}
+    main: {},
 };

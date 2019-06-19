@@ -1,4 +1,4 @@
-require('@Config/env');
+require('./config/env');
 import express from 'express';
 import routes from './router/routes';
 

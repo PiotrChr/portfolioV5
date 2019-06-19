@@ -1,10 +1,12 @@
 import express from 'express';
 const router = express.Router();
-import { cache } from '@Server/middleware/cache'
+import cache from 'express-memory-cache';
 
-import * as Controller from '@Server/controller';
+import * as Controller from '../controller';
 
-router.get('/', Controller.Index);
-router.get('/api/content/blog/:post?', cache(5), Controller.Blog)
+const ct = 3600 * 24;
+
+router.get('/', cache(ct), Controller.Index);
+router.get('/api/content/blog/:post?', cache(ct), Controller.Blog);
 
 export default router;

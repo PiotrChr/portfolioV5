@@ -1,4 +1,4 @@
 import styled from 'styled-components';
-import '@Css/App.scss'
+import '@Css/App.scss';
 
-export const App = styled.div``
+export const App = styled.div``;

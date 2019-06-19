@@ -9,8 +9,10 @@ const { NODE_ENV = 'production' } = process.env;
 module.exports = {
     entry: {
         server: [
-            path.resolve(paths.SERVER, 'index.ts')
-        ]
+            require.resolve('core-js/stable'),
+            require.resolve('regenerator-runtime/runtime'),
+            path.resolve(paths.SERVER, 'index.ts'),
+        ],
     },
     mode: NODE_ENV,
     target: 'node',

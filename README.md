@@ -31,13 +31,13 @@ TODO:
 - [✓] Create a navbar
 - Read about express middlewares
 - Setup Immer (ref: Manu's react-ssr)
-- Server: Add caching
+- [✓] Server: Add caching
 - Server: Contentful
-- Server: Add content API
+- [✓] Server: Add content API
 - Client: add content mapping
 - Add Tests !
-- Add a server build
-- Finish DropdownSelect
-- testbuild:server fails for some reason
+- [✓] Add a server build
+- [✓] Finish DropdownSelect
+- [✓] testbuild:server fails for some reason
 - Handle url set locale
 - Loads forever, wtf
