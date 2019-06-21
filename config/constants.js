@@ -7,7 +7,10 @@ const constants = {
         SERVER_DIST: 'server/dist',
         RESOURCES: 'resources/'
     },
-    
+    env: {
+        SERVER_BASE_URL: process.env.SERVER_BASE_URL,
+        API_URL: process.env.API_URL
+    }
 };
 
 constants.paths.MODULES = [

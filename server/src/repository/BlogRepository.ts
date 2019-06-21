@@ -8,11 +8,11 @@ export class BlogRepository {
         this.storage = contentfulStorage;
     }
 
-        // TODO: Should only return posts with specific contentType
-        // getPosts(page: number): any {
-        //     const posts = this.storage.getPosts(page);
-        //     return posts;
-        // }
+    // TODO: Should only return posts with specific contentType
+    // getPosts(page: number): any {
+    //     const posts = this.storage.getPosts(page);
+    //     return posts;
+    // }
 
     async getAll(): Promise<any> {
         try {

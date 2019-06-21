@@ -5,6 +5,7 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const HtmlWebpackPlugn = require('html-webpack-plugin');
 const { paths } = require('../constants');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const Dotenv = require('dotenv-webpack');
 
 const shared = [
     // new BundleAnalyzerPlugin(),
@@ -16,6 +17,7 @@ const shared = [
 ];
 
 const client = [
+    new Dotenv(),
     new CaseSensitivePathsPlugin(),
     new MiniCssExtractPlugin({
         filename:

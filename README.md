@@ -21,7 +21,7 @@ TODO:
 - ✓ Add React Router
 - ✓ Adjust webpack for SSR
 - ✓ Setup Webpack
-- ✓ read about https://github.com/visionmedia/supertest TESTS (we can defiinitely use it for testing)
+- ✓ read about https://github.com/visionmedia/supertest TESTS (we can definitely use it for testing)
 - ✓ Learn about postcss (won't fit here it's good for post processing rather large chunks of assembled css)
 - ✓ Configure react-helmet
 - ✓ Write ENV actions (with Immer)
@@ -36,7 +36,7 @@ TODO:
 - ✓ Finish DropdownSelect
 - ✓ testbuild:server fails for some reason
 - ✓ Setup Immer (ref: Manu's react-ssr)
-- Read about express middlewares
+- ✓ Read about express middlewares
 - Read about Jenkins setup
 - Client: add content api call
 - Client: add content mapping

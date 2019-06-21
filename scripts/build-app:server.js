@@ -58,7 +58,7 @@ const generateStaticHTML = async () => {
 };
 
 const build = async () => {
-    
+
     rimraf.sync(paths.APP_DIST);
     // rimraf.sync(paths.serverBuild);
 
