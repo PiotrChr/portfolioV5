@@ -8,12 +8,10 @@ import { fetchBlogPosts } from '@App/store/actions/content';
 // import console = require('console');
 import { ThunkDispatch } from 'redux-thunk'
 import { AnyAction } from 'redux';
-
-
+import { PostContainer } from '@App/components/content/blog'
 
 type Props = {
-    // posts: Post[];
-    posts: any;
+    posts: Post[];
     fetchBlogPosts: () => any;
 };
 class BlogPage extends React.Component<Props> {
@@ -22,15 +20,20 @@ class BlogPage extends React.Component<Props> {
     }
 
     render(): ReactNode {
-        return 'bumc';
+        return (
+            <>
+                <div>Blog</div>
+                <PostContainer
+                    posts={ this.props.posts }
+                />
+            </>
+        );
     }
 }
 
 const mapStateToProps = (state: State) => {
-    console.log(state);
-
     return {
-        posts: 'asd'
+        posts: state.content.blog.posts
     }
 }
 
