@@ -9,7 +9,7 @@ const createRootReducer = (history: History) =>
     combineReducers({
         app: combineReducers({
             env,
-            content
+            content,
         }),
         router: connectRouter(history),
     });

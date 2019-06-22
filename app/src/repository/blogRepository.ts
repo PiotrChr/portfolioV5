@@ -1,5 +1,5 @@
 import axios from 'axios';
-import constants from '@Config/constants'
+import constants from '@Config/constants';
 
 export const getPosts = async (): Promise<any> => {
     const url = `${constants.env.SERVER_BASE_URL}${constants.env.API_URL}/content/blog`;

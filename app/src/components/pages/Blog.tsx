@@ -1,14 +1,12 @@
 import React, { ReactNode } from 'react';
 import { connect } from 'react-redux';
 
-import { Dispatch } from 'redux';
 import { State, Action } from '@App/store/';
 import { Post } from '@Server/mapper';
 import { fetchBlogPosts } from '@App/store/actions/content';
-// import console = require('console');
-import { ThunkDispatch } from 'redux-thunk'
+import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
-import { PostContainer } from '@App/components/content/blog'
+import { PostContainer } from '@App/components/content/blog';
 
 type Props = {
     posts: Post[];
@@ -23,22 +21,22 @@ class BlogPage extends React.Component<Props> {
         return (
             <>
                 <div>Blog</div>
-                <PostContainer
-                    posts={ this.props.posts }
-                />
+                <PostContainer posts={this.props.posts} />
             </>
         );
     }
 }
 
-const mapStateToProps = (state: State) => {
+const mapStateToProps = (state: { app: State }) => {
     return {
-        posts: state.content.blog.posts
-    }
-}
+        posts: state.app.content.blog.posts,
+    };
+};
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, AnyAction>) => ({
-    fetchBlogPosts: () => { dispatch(fetchBlogPosts()) } ,
+    fetchBlogPosts: () => {
+        dispatch(fetchBlogPosts());
+    },
 });
 
 export const Blog = connect(

@@ -1,13 +1,19 @@
-import { ContentfulComponentProps } from '@App/service/contentfulMapper'
+import React from 'react';
+import { ContentfulComponentProps } from '@App/service/contentfulMapper';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 type Props = ContentfulComponentProps & {
-    fields: any[]
-}
+    fields: {
+        title: string;
+        content: any;
+    };
+};
 
 export const Post = (props: Props): import('react').ReactElement => {
-    console.log('id: ', props);
-
+    const content = documentToHtmlString(props.fields.content);
     return (
-        <div>asd</div>
-        )
-}
+        <div id={props.id}>
+            <div dangerouslySetInnerHTML={{ __html: content }} />
+        </div>
+    );
+};

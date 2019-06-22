@@ -1,7 +1,7 @@
 import { produce } from 'immer';
 
 import { State, Action, ActionTypes } from '@App/store';
-import { env as initialState } from './initialState'
+import { env as initialState } from './initialState';
 
 export default (state = initialState, action: Action) => {
     return produce(state, (draft) => {

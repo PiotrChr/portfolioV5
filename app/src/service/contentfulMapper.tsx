@@ -1,4 +1,5 @@
-import { Post as BlogPost } from '@App/components/content/blog'
+import React from 'react';
+import { Post as BlogPost } from '@App/components/content/blog';
 
 export type Content = {
     id: string;
@@ -11,33 +12,28 @@ export type Content = {
 };
 
 export type ContentfulComponentProps = {
-    fields: any[],
-    id: string,
-    title: string
-}
+    fields: any[];
+    id: string;
+};
 
-export type ContentfulContentComponent = import('react').FC<ContentfulComponentProps>
+export type ContentfulContentComponent = React.FC<ContentfulComponentProps>;
 
 const contentTypes: { [key: string]: ContentfulContentComponent } = {
-    'blogPost': BlogPost
-}
+    blogPost: BlogPost,
+};
 
 export const mapContent = (content: Content[]) => {
-    return Array(content.length).fill(null).map((_, i) => {
-        const { contentTypeId, id, fields, title } = content[i]
+    return Array(content.length)
+        .fill(null)
+        .map((_, i) => {
+            const { contentTypeId, id, fields, title } = content[i];
 
-        if (!(contentTypeId in contentTypes)) {
-            return null
-        }
+            if (!(contentTypeId in contentTypes)) {
+                return null;
+            }
 
-        const ContentComponent = contentTypes[contentTypeId];
+            const ContentComponent = contentTypes[contentTypeId];
 
-        return (
-            <ContentComponent
-                id={ id }
-                fields={ fields }
-                title={ title }
-            />
-        )
-    });
+            return <ContentComponent id={id} fields={fields} key={id} />;
+        });
 };

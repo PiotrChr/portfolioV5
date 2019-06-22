@@ -19,9 +19,6 @@ export const setBlogPosts = (posts: Post[]) => ({
 //     });
 export const fetchBlogPosts = () => (dispatch: Dispatch) => {
     getPosts().then((posts) => {
-        console.log(posts);
-        console.log('asd');
         dispatch(setBlogPosts(posts));
     });
-}
-
+};
