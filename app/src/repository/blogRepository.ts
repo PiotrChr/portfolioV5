@@ -1,6 +1,16 @@
 import axios from 'axios';
 import constants from '@Config/constants';
 
+export type Post = {
+    id: string;
+    createdAt: Date;
+    updatedAt: Date;
+    locale: string;
+    title: string;
+    fields: any;
+    contentTypeId: string;
+};
+
 export const getPosts = async (): Promise<any> => {
     const url = `${constants.env.SERVER_BASE_URL}${constants.env.API_URL}/content/blog`;
 

@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import { connect } from 'react-redux';
 
 import { State, Action } from '@App/store/';
-import { Post } from '@Server/mapper';
+import { Post } from '@App/repository/blogRepository';
 import { fetchBlogPosts } from '@App/store/actions/content';
 import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';

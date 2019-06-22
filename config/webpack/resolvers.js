@@ -7,7 +7,6 @@ const client = {
     alias: {
         '@Config': path.resolve(paths.CONFIG),
         '@App': path.resolve('app', 'src'),
-        '@Server': path.resolve('server', 'src'),
         '@Css': path.resolve('app', 'scss'),
     },
 };
@@ -18,7 +17,6 @@ const server = {
     alias: {
         '@Config': path.resolve(paths.CONFIG),
         '@App': path.resolve('app', 'src'),
-        '@Server': path.resolve('server', 'src'),
     },
 };
 

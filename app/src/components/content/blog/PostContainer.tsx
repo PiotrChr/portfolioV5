@@ -1,4 +1,4 @@
-import { Post } from '@Server/mapper';
+import { Post } from '@App/repository/blogRepository';
 import { mapContent } from '@App/service/contentfulMapper';
 
 import React from 'react';

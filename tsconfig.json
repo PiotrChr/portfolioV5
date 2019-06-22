@@ -21,7 +21,6 @@
         "*": ["node_modules"],
         "@App/*": ["app/src/*"],
         "@Config/*": ["config/*"],
-        "@Server/*": ["server/src/*"],
         "@Css/*": ["app/scss/*"]
       },
       "baseUrl": "./"

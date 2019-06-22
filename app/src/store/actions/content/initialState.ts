@@ -1,4 +1,4 @@
-import { Post } from '@Server/mapper';
+import { Post } from '@App/repository/blogRepository';
 
 export type Content = {
     blog: {

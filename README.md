@@ -37,6 +37,7 @@ TODO:
 - ✓ testbuild:server fails for some reason
 - ✓ Setup Immer (ref: Manu's react-ssr)
 - ✓ Read about express middlewares
+- Decouple server and frontend
 - Read about Jenkins setup
 - Client: add content api call
 - Client: add content mapping
