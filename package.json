@@ -14,7 +14,7 @@
     "rs": "node app/dist/app.server.js",
     "bc": "npm run build:client",
     "bcp": "npm run build:client:prod",
-    "bas": "npm run build:server",
+    "bs": "npm run build:server",
     "bsp": "npm run build:server:prod",
     "pw": "prettier --write 'app/**[!dist]/**/*.{ts,tsx,js}'",
     "pc": "prettier --check 'app/**[!dist]/**/*.{ts,tsx,js}'"
