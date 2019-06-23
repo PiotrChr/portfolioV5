@@ -1,28 +1,26 @@
 const path = require('path');
+const paths = require('../constants').paths;
 const nodeExternals = require('webpack-node-externals');
-const baseConfig = require('./webpack/webpack.base');
-
+const baseConfig = require('./webpack.base');
+const loaders = require('./loaders').server;
+const resolvers = require('./resolvers').server;
 const { NODE_ENV = 'production' } = process.env;
 
 module.exports = {
-    ...baseConfig,
-    entry: './server/index.ts',
+    entry: {
+        server: [
+            require.resolve('core-js/stable'),
+            require.resolve('regenerator-runtime/runtime'),
+            path.resolve(paths.SERVER, 'index.ts'),
+        ],
+    },
     mode: NODE_ENV,
     target: 'node',
     output: {
-        path: path.resolve(__dirname, 'server', 'dist'),
-        filename: 'index.js',
+        path: path.resolve(paths.SERVER_DIST),
+        filename: 'server.js',
     },
     externals: [nodeExternals()],
-    module: {
-        rules: [
-            {
-                test: /\.ts$/,
-                use: ['ts-loader'],
-            },
-        ],
-    },
-    resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx'],
-    },
+    module: { rules: loaders },
+    resolve: resolvers,
 };

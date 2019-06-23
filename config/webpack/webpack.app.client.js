@@ -1,30 +1,39 @@
 const path = require('path');
 const paths = require('../constants').paths;
-const nodeExternals = require('webpack-node-externals');
-const loaders = require('./loaders');
+const loaders = require('./loaders').appclient;
 const plugins = require('./plugins');
-const resolvers = require('./resolvers');
+const resolvers = require('./resolvers').client;
 const TerserPlugin = require('terser-webpack-plugin');
 
 const { NODE_ENV = 'production' } = process.env;
 const baseConfig = require('./webpack.base');
 
 module.exports = {
-    ...baseConfig,
     name: 'app:client',
-    entry: path.resolve(paths.APP, 'app.client.ts'),
+    entry: {
+        client: [
+            require.resolve('core-js/stable'),
+            require.resolve('regenerator-runtime/runtime'),
+            path.resolve(paths.APP, 'app.client.tsx'),
+        ],
+    },
     mode: NODE_ENV,
-    target: 'node',
+    target: 'web',
     output: {
         path: path.resolve(paths.APP_DIST),
-        filename: 'index.js',
+        filename: 'app.client.js',
+        chunkFilename: '[name].[chunkhash:8].chunk.js',
     },
-    externals: [nodeExternals()],
+    node: {
+        dgram: 'empty',
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty',
+        child_process: 'empty',
+    },
     resolve: resolvers,
     plugins: [...plugins.shared, ...plugins.client],
-    module: {
-        rules: loaders.client,
-    },
+    module: { rules: loaders },
     optimization: {
         minimizer: [
             new TerserPlugin({
@@ -68,7 +77,7 @@ module.exports = {
                 parallel: true,
                 // Enable file caching
                 cache: true,
-                sourceMap: true, // adjust for prod
+                sourceMap: NODE_ENV === 'development',
             }),
         ],
         namedModules: true,

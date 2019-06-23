@@ -26,7 +26,10 @@ const compilerPromise = (name, compiler) => {
     });
 };
 
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 module.exports = {
     logMessage,
-    compilerPromise
+    compilerPromise,
+    sleep
 };

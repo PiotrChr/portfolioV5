@@ -8,7 +8,7 @@ const paths = require('../config/constants').paths;
 const { logMessage, compilerPromise } = require('./utils');
 
 const build = async () => {
-    // rimraf.sync(paths.APP_DIST);
+    rimraf.sync(paths.APP_DIST);
     // rimraf.sync(paths.SERVER_DIST);
 
     // const [clientConfig] = webpackConfig;
@@ -29,7 +29,7 @@ const build = async () => {
     try {
         await clientPromise;
         logMessage('Done!', 'info');
-        process.exit();
+        // process.exit();
     } catch (error) {
         logMessage(error, 'error');
         process.exit();

@@ -1,7 +1,9 @@
 const path = require('path');
 const paths = require('../constants').paths;
 const nodeExternals = require('webpack-node-externals');
-const loaders = require('./loaders');
+const loaders = require('./loaders').appserver;
+const plugins = require('./plugins');
+const resolvers = require('./resolvers').client;
 
 const { NODE_ENV = 'production' } = process.env;
 
@@ -13,7 +15,7 @@ module.exports = {
         server: [
             require.resolve('core-js/stable'),
             require.resolve('regenerator-runtime/runtime'),
-            path.resolve(paths.SERVER, 'index.ts'),
+            path.resolve(paths.APP, 'app.server.tsx'),
         ],
     },
     externals: [
@@ -22,17 +24,13 @@ module.exports = {
         }),
     ],
     output: {
-        path: paths.SERVER_DIST,
+        path: path.resolve(paths.APP_DIST),
         filename: 'app.server.js',
-        publicPath: paths.RESOURCES,
     },
-    resolve: {
-        extensions: ['.js', '.mjs', '.json', '.jsx', '.ts', '.tsx', '.css'],
-        modules: paths.MODULES,
-    },
+    resolve: resolvers,
     plugins: [...plugins.shared, ...plugins.server],
     module: {
-        rules: loaders.server,
+        rules: loaders,
     },
     stats: {
         colors: true,

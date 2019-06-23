@@ -1,14 +1,26 @@
 const path = require('path');
 const paths = require('../constants').paths;
 
-const resolvers = {
+const client = {
     extensions: ['.js', '.mjs', '.json', '.jsx', '.ts', '.tsx', '.css'],
     modules: paths.MODULES,
     alias: {
-        '@Config': path.resolve(paths.CONFIG, 'config'),
-        '@App': path.resolve('app','src'),
-        '@Server': path.resolve('server', 'src'),
-    }
-}
+        '@Config': path.resolve(paths.CONFIG),
+        '@App': path.resolve('app', 'src'),
+        '@Css': path.resolve('app', 'scss'),
+    },
+};
 
-module.exports = resolvers;
+const server = {
+    extensions: ['.js', '.mjs', '.json', '.jsx', '.ts', '.tsx'],
+    modules: paths.MODULES,
+    alias: {
+        '@Config': path.resolve(paths.CONFIG),
+        '@App': path.resolve('app', 'src'),
+    },
+};
+
+module.exports = {
+    client,
+    server,
+};
