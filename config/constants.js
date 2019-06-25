@@ -10,6 +10,19 @@ const constants = {
     env: {
         SERVER_BASE_URL: process.env.SERVER_BASE_URL,
         API_URL: process.env.API_URL
+    },
+    app: {
+        componentScopes: {
+            app: 'app'
+            home: 'home',
+            blog: 'blog'
+        },
+        statusTypes: {
+            error: 'error',
+            success: 'success',
+            info: 'info',
+            warning: 'warning'
+        }
     }
 };
 

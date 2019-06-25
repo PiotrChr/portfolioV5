@@ -11,22 +11,27 @@ export type Content = {
     contentTypeId: string;
 };
 
+export type PostFields = {
+    title: string;
+    content: any;
+};
+
 export type ContentfulComponentProps = {
-    fields: any[];
+    fields: PostFields;
     id: string;
 };
 
 export type ContentfulContentComponent = React.FC<ContentfulComponentProps>;
 
 const contentTypes: { [key: string]: ContentfulContentComponent } = {
-    blogPost: BlogPost,
+    'blogPost': BlogPost,
 };
 
 export const mapContent = (content: Content[]) => {
     return Array(content.length)
         .fill(null)
         .map((_, i) => {
-            const { contentTypeId, id, fields, title } = content[i];
+            const { contentTypeId, id, fields } = content[i];
 
             if (!(contentTypeId in contentTypes)) {
                 return null;
