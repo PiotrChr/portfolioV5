@@ -41,6 +41,10 @@ TODO:
 - ✓ Read about Jenkins setup
 - ✓ Client: add content api call
 - ✓ Client: add content mapping
+- Create a language dropdown for nav
+- Finish env componentScope actions
 - Handle url set locale
 - Add Tests !
 - Loads forever, wtf
+- Write better readme
+
