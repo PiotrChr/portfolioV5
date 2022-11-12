@@ -41,6 +41,7 @@ TODO:
 - ✓ Read about Jenkins setup
 - ✓ Client: add content api call
 - ✓ Client: add content mapping
+- Add s3 storage
 - Create a language dropdown for nav
 - Finish env componentScope actions
 - Handle url set locale
